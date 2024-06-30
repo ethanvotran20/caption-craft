@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,29 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className + " body-bg min-h-screen text-white"}>
+      <main className="p-4 max-w-2xl mx-auto">
+        <header className="flex justify-between my-8">
+        <a href="#" className="flex items-center"> {/* Use flex to align items inline */}
+            <Image
+              src="/images/cc-logo.png" // Correct path from the public directory
+              alt="Caption-Craft Logo"
+              width={150} // Adjust the width as needed
+              height={150} // Adjust the height as needed
+              className="mr-2" // Optional: adds margin to the right of the logo
+            />
+            Caption-Craft
+          </a>
+          <nav className="flex gap-6 text-white/80">
+            <Link href="/">Home</Link>
+            <Link href="/pricing">Pricing</Link>
+            <a href="mailto:contact@caption-craft.com">Contact</a>
+
+          </nav>
+        </header>
+        {children}
+      </main>
+      </body>
     </html>
   );
 }
