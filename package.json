@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@aws-sdk/client-s3": "^3.606.0",
+    "@aws-sdk/client-transcribe": "^3.606.0",
+    "aws-crt": "^1.21.3",
     "uniqid": "^5.4.0"
   }
 }
